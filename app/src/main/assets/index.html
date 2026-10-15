@@ -1,642 +1,641 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#101426">
-<title>IZUMI LEARNING HUB</title><style>
-:root {
-  --bg: #101426;
-  --card: #1b2239;
-  --text: #f4f5ff;
-  --muted: #aab2ce;
-  --purple: #a78bfa;
-  --blue: #60a5fa;
-  --green: #4ade80;
-  --orange: #fbbf24;
+<title>IZUMI LEARNING HUB</title>
+
+<style>
+* {
+    box-sizing: border-box;
 }
 
-* {
-  box-sizing: border-box;
+:root {
+    --bg: #10121a;
+    --card: #1b1f2d;
+    --accent: #8b7cff;
+    --text: #f3f3fa;
+    --muted: #a8aec4;
+    --green: #55d6a0;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
 header {
-  padding: 24px 18px;
-  background: linear-gradient(135deg, #29245b, #172e50);
-  border-bottom: 1px solid #343b59;
+    padding: 22px 16px;
+    background: linear-gradient(135deg, #29244f, #171b2b);
+    border-bottom: 1px solid #383452;
 }
 
-.logo {
-  font-size: 23px;
-  font-weight: bold;
-  letter-spacing: 1px;
+header h1 {
+    margin: 0;
+    font-size: 23px;
 }
 
-.logo span {
-  color: var(--purple);
-}
-
-.subtitle {
-  color: var(--muted);
-  font-size: 13px;
-  margin-top: 7px;
+header p {
+    margin-bottom: 0;
+    color: var(--muted);
 }
 
 main {
-  padding: 16px;
-  max-width: 700px;
-  margin: auto;
-}
-
-.welcome {
-  margin: 8px 0 18px;
-  font-size: 22px;
-}
-
-.welcome small {
-  display: block;
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 8px;
-  font-weight: normal;
+    padding: 16px;
+    max-width: 800px;
+    margin: auto;
 }
 
 .stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 9px;
-  margin-bottom: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 22px;
 }
 
 .stat {
-  background: var(--card);
-  padding: 13px 8px;
-  border-radius: 13px;
-  text-align: center;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 12px 6px;
+    text-align: center;
 }
 
 .stat strong {
-  display: block;
-  font-size: 20px;
-  color: var(--purple);
+    display: block;
+    color: var(--accent);
+    font-size: 20px;
 }
 
-.stat small {
-  display: block;
-  margin-top: 5px;
-  color: var(--muted);
-  font-size: 11px;
+.stat span {
+    font-size: 12px;
+    color: var(--muted);
 }
 
-.section-title {
-  font-size: 18px;
-  margin: 24px 0 12px;
+h2 {
+    font-size: 20px;
+    margin-top: 26px;
 }
 
-.priority {
-  background: linear-gradient(135deg, #203b48, #1b2239);
-  border: 1px solid #3d746b;
-  border-radius: 15px;
-  padding: 16px;
-  margin-bottom: 13px;
+.card {
+    background: var(--card);
+    border: 1px solid #303548;
+    border-radius: 14px;
+    padding: 16px;
+    margin: 12px 0;
 }
 
-.priority h3 {
-  margin: 0 0 8px;
+.card h3 {
+    margin-top: 0;
 }
 
-.priority p {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.academy {
-  background: var(--card);
-  border: 1px solid #303953;
-  padding: 16px;
-  border-radius: 15px;
-  margin-bottom: 12px;
-}
-
-.academy h3 {
-  margin: 0 0 8px;
-}
-
-.academy p {
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--muted);
+.muted {
+    color: var(--muted);
+    font-size: 14px;
 }
 
 button {
-  border: 0;
-  border-radius: 9px;
-  padding: 11px 14px;
-  background: var(--purple);
-  color: #17132b;
-  font-weight: bold;
-  cursor: pointer;
+    border: 0;
+    border-radius: 9px;
+    padding: 11px 14px;
+    background: var(--accent);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 4px 4px 4px 0;
 }
 
-button:active {
-  opacity: 0.8;
+button:disabled {
+    background: #355b4b;
+    color: white;
 }
 
-.secondary {
-  background: #303953;
-  color: var(--text);
+button.secondary {
+    background: #34394c;
 }
 
-.progress-track {
-  height: 8px;
-  border-radius: 8px;
-  background: #303953;
-  overflow: hidden;
-  margin: 12px 0;
+button.option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #292e40;
+    border: 1px solid #424861;
+    margin: 9px 0;
 }
 
-.progress-fill {
-  height: 100%;
-  width: 0;
-  background: var(--green);
-  transition: width 0.3s;
+button.option:active {
+    background: #4b426f;
 }
 
-.menu {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 9px;
-  margin-bottom: 18px;
+.lesson-title {
+    color: var(--green);
 }
 
-.menu button {
-  background: var(--card);
-  border: 1px solid #303953;
-  color: var(--text);
-  padding: 14px 8px;
+.progress-bg {
+    background: #303548;
+    height: 9px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 12px 0;
 }
 
-.panel {
-  display: none;
-  background: var(--card);
-  border: 1px solid #303953;
-  border-radius: 15px;
-  padding: 16px;
-  margin-top: 14px;
+.progress-bar {
+    background: var(--green);
+    height: 100%;
+    width: 0;
 }
 
-.panel.active {
-  display: block;
+.question {
+    font-size: 17px;
+    font-weight: bold;
 }
 
-.lesson {
-  border-top: 1px solid #343b59;
-  padding: 12px 0;
-  line-height: 1.6;
-}
-
-.lesson p {
-  color: var(--muted);
-  font-size: 14px;
+.feedback {
+    padding: 12px;
+    border-radius: 9px;
+    margin-top: 12px;
+    background: #292e40;
 }
 
 footer {
-  text-align: center;
-  color: var(--muted);
-  padding: 25px 12px;
-  font-size: 12px;
+    text-align: center;
+    padding: 25px;
+    color: var(--muted);
+    font-size: 12px;
 }
+</style>
+</head>
 
-.notice {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.6;
-}
+<body>
 
-.hidden {
-  display: none;
-}
-</style></head><body><header>
-  <div class="logo">IZUMI <span>LEARNING HUB</span></div>
-  <div class="subtitle">
-    Offline Personal Academy · Learn at Your Own Pace
-  </div>
-</header><main>  <h1 class="welcome">
-    Selamat datang, Learner! 👋
-    <small>Belajar sedikit demi sedikit, bangun masa depanmu.</small>
-  </h1>  <div class="stats">
+<header>
+    <h1>IZUMI LEARNING HUB</h1>
+    <p>Learn today, build your future. 🇯🇵</p>
+    <p>Belajar sedikit demi sedikit, setiap hari.</p>
+</header>
+
+<main>
+
+<section class="stats">
     <div class="stat">
-      <strong id="xp">0</strong>
-      <small>Total XP</small>
+        <strong id="xp">0</strong>
+        <span>Total XP</span>
     </div>
     <div class="stat">
-      <strong id="level">1</strong>
-      <small>Level</small>
+        <strong id="level">1</strong>
+        <span>Level</span>
     </div>
     <div class="stat">
-      <strong id="completed">0</strong>
-      <small>Pelajaran selesai</small>
+        <strong id="done">0</strong>
+        <span>Pelajaran selesai</span>
     </div>
-  </div>  <div class="priority">
-    <h3>🇯🇵 MEXT KOSEN — PRIORITAS UTAMA</h3>
-    <p>
-      Tujuan besar: MEXT KOSEN → Jepang → membangun kemampuan
-      dan masa depan finansial yang lebih baik.
-      Mulai dari matematika, fisika, English, dan Japanese.
-    </p>
-    <button onclick="openAcademy('mext')">
-      Mulai Persiapan MEXT
-    </button>
-  </div>  <h2 class="section-title">🎓 My Academies</h2>  <div class="academy">
+</section>
+
+<section class="card">
+    <h3>📈 Progres MEXT Academy</h3>
+    <div class="progress-bg">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <p class="muted" id="progressText">0 dari 4 pelajaran selesai</p>
+</section>
+
+<h2>🎓 Akademi Belajar</h2>
+
+<div class="card">
     <h3>🇯🇵 MEXT Academy</h3>
-    <p>
-      Matematika, fisika, bahasa Inggris, bahasa Jepang,
-      latihan soal, dan persiapan seleksi KOSEN.
-    </p>
-    <button onclick="openAcademy('mext')">Buka Akademi</button>
-  </div>  <div class="academy">
-    <h3>🎹 Vocaloid Academy</h3>
-    <p>
-      Kasane Teto, OpenUtau Nightly, music theory,
-      chord, melody, FL Studio Mobile, dan mixing.
-    </p>
-    <button onclick="openAcademy('vocaloid')">Buka Akademi</button>
-  </div>  <div class="academy">
-    <h3>💻 Coding Academy</h3>
-    <p>
-      Belajar HTML, CSS, JavaScript, memahami kode,
-      dan berlatih membuat website langsung dari HP.
-    </p>
-    <button onclick="openAcademy('coding')">Buka Akademi</button>
-  </div>  <div class="academy">
-    <h3>📚 Japanese Academy</h3>
-    <p>
-      Kosakata, kanji, tata bahasa, membaca,
-      dan persiapan JLPT N5 sampai N2.
-    </p>
-    <button onclick="openAcademy('japanese')">Buka Akademi</button>
-  </div>  <div id="academyPanel" class="panel">
-    <h2 id="panelTitle">Akademi</h2>
-    <p id="panelDescription"></p>
-    <div id="lessonList"></div>
-    <button class="secondary" onclick="closeAcademy()">Kembali</button>
-  </div>  <h2 class="section-title">🧰 Learning Tools</h2>  <div class="menu">
-    <button onclick="showTools('modules')">📦 Module Manager</button>
-    <button onclick="showTools('achievements')">🏆 Achievements</button>
-    <button onclick="showTools('notes')">📝 Catatan</button>
-    <button onclick="showTools('bookmarks')">🔖 Bookmark</button>
-  </div>  <div id="toolsPanel" class="panel">
-    <h3 id="toolsTitle"></h3>
-    <div id="toolsContent"></div>
-  </div>  <p class="notice">
-    Versi awal: dashboard dan materi dasar.
-    Fitur impor ZIP, penyimpanan modul, kuis lengkap,
-    dan editor kode akan dikembangkan bertahap.
-  </p></main><footer>
-  IZUMI LEARNING HUB · Built for Learning, Created for the Future.
-</footer><script>
-const defaultState = {
-  xp: 0,
-  completed: [],
-  notes: "",
-  bookmarks: [],
-  modules: [],
-  achievements: []
-};
+    <p>Persiapan belajar untuk target beasiswa MEXT KOSEN.</p>
+    <p class="muted">Matematika • Fisika • Inggris • Strategi belajar</p>
+    <button onclick="showSection('mext')">Buka MEXT Academy</button>
+</div>
 
-let state;
+<div class="card">
+    <h3>🎵 Vocaloid Academy</h3>
+    <p>Belajar melodi, chord, tuning Kasane Teto, dan produksi musik.</p>
+    <p class="muted">Modul pembelajaran sedang dikembangkan.</p>
+</div>
+
+<div class="card">
+    <h3>💻 Coding Academy</h3>
+    <p>Belajar HTML, CSS, dan JavaScript dari dasar.</p>
+    <p class="muted">Modul pembelajaran sedang dikembangkan.</p>
+</div>
+
+<div class="card">
+    <h3>🇯🇵 Japanese Academy</h3>
+    <p>Belajar kosakata, kanji, tata bahasa, dan JLPT.</p>
+    <p class="muted">Modul pembelajaran sedang dikembangkan.</p>
+</div>
+
+<section id="mext" hidden>
+    <h2>📚 MEXT Academy: Matematika</h2>
+    <p class="muted">
+        Materi pengantar dan latihan dasar untuk membangun fondasi
+        Matematika. Ini belum merupakan simulasi resmi ujian MEXT.
+    </p>
+
+    <div id="lessonList"></div>
+
+    <button class="secondary" onclick="showSection('home')">
+        ← Kembali ke beranda
+    </button>
+</section>
+
+<section id="lessonView" hidden>
+    <div class="card">
+        <p class="lesson-title" id="lessonNumber"></p>
+        <h2 id="lessonHeading"></h2>
+        <div id="lessonContent"></div>
+
+        <button onclick="startQuiz()">Mulai latihan soal</button>
+        <button class="secondary" onclick="showSection('mext')">
+            Kembali ke daftar materi
+        </button>
+    </div>
+</section>
+
+<section id="quizView" hidden>
+    <div class="card">
+        <h2>✏️ Latihan Matematika</h2>
+        <p class="muted" id="quizCounter"></p>
+        <p class="question" id="questionText"></p>
+        <div id="options"></div>
+        <div id="feedback" class="feedback" hidden></div>
+        <button id="nextButton" onclick="nextQuestion()" hidden>
+            Soal berikutnya
+        </button>
+        <button class="secondary" onclick="showSection('mext')">
+            Keluar dari latihan
+        </button>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    IZUMI LEARNING HUB • Offline Learning Project
+</footer>
+
+<script>
+const lessons = [
+{
+    id: "math1",
+    title: "Persamaan Linear",
+    description: "Memahami cara mencari nilai variabel.",
+    content: `
+        <h3>1. Apa itu persamaan linear?</h3>
+        <p>Persamaan linear adalah persamaan dengan variabel
+        berpangkat satu.</p>
+        <p>Contoh: <b>2x + 3 = 11</b></p>
+
+        <h3>2. Cara menyelesaikan</h3>
+        <p>Kurangi kedua sisi dengan 3:</p>
+        <p>2x = 11 - 3 = 8</p>
+        <p>Bagi kedua sisi dengan 2:</p>
+        <p><b>x = 4</b></p>
+
+        <p>Ingat: operasi yang dilakukan pada satu sisi
+        harus menjaga keseimbangan persamaan.</p>
+    `,
+    questions: [
+        {
+            q: "Berapakah nilai x dari 2x + 4 = 14?",
+            options: ["3", "5", "7", "9"],
+            answer: 1,
+            explanation: "2x = 14 - 4 = 10. Jadi x = 10 ÷ 2 = 5."
+        },
+        {
+            q: "Jika 3x = 21, berapakah nilai x?",
+            options: ["6", "7", "8", "9"],
+            answer: 1,
+            explanation: "Bagi kedua sisi dengan 3. Hasilnya x = 7."
+        }
+    ]
+},
+{
+    id: "math2",
+    title: "Pecahan dan Operasinya",
+    description: "Belajar penjumlahan dan penyederhanaan pecahan.",
+    content: `
+        <h3>1. Pecahan</h3>
+        <p>Pecahan terdiri dari pembilang dan penyebut.</p>
+        <p>Contoh: 1/2 berarti satu bagian dari dua bagian
+        yang sama besar.</p>
+
+        <h3>2. Penjumlahan pecahan</h3>
+        <p>Jika penyebut sama, jumlahkan pembilangnya.</p>
+        <p>Contoh: 1/5 + 2/5 = 3/5.</p>
+
+        <p>Jika penyebut berbeda, samakan penyebut
+        terlebih dahulu.</p>
+        <p>Contoh: 1/2 + 1/4 = 2/4 + 1/4 = 3/4.</p>
+    `,
+    questions: [
+        {
+            q: "Berapakah hasil 1/4 + 2/4?",
+            options: ["1/2", "2/8", "3/4", "3/8"],
+            answer: 2,
+            explanation: "Penyebut sama, jadi 1 + 2 = 3. Hasilnya 3/4."
+        },
+        {
+            q: "Berapakah hasil 1/2 + 1/4?",
+            options: ["2/6", "3/4", "1/4", "1"],
+            answer: 1,
+            explanation: "1/2 sama dengan 2/4. Jadi 2/4 + 1/4 = 3/4."
+        }
+    ]
+},
+{
+    id: "math3",
+    title: "Pangkat dan Akar",
+    description: "Mengenal pangkat bilangan dan akar kuadrat.",
+    content: `
+        <h3>1. Pangkat</h3>
+        <p>Pangkat menunjukkan perkalian berulang.</p>
+        <p>Contoh: 2³ = 2 × 2 × 2 = 8.</p>
+
+        <h3>2. Akar kuadrat</h3>
+        <p>Akar kuadrat mencari bilangan yang jika
+        dikalikan dengan dirinya menghasilkan bilangan
+        di dalam akar.</p>
+        <p>Contoh: √25 = 5 karena 5 × 5 = 25.</p>
+    `,
+    questions: [
+        {
+            q: "Berapakah nilai 3²?",
+            options: ["6", "8", "9", "12"],
+            answer: 2,
+            explanation: "3² = 3 × 3 = 9."
+        },
+        {
+            q: "Berapakah √49?",
+            options: ["6", "7", "8", "9"],
+            answer: 1,
+            explanation: "7 × 7 = 49, jadi √49 = 7."
+        }
+    ]
+},
+{
+    id: "math4",
+    title: "Fungsi Linear",
+    description: "Memahami hubungan x dan y dalam fungsi sederhana.",
+    content: `
+        <h3>1. Apa itu fungsi?</h3>
+        <p>Fungsi menghubungkan suatu nilai masukan
+        dengan nilai keluaran.</p>
+
+        <p>Contoh: y = 2x + 1.</p>
+
+        <h3>2. Menghitung nilai fungsi</h3>
+        <p>Jika x = 3, maka:</p>
+        <p>y = 2(3) + 1</p>
+        <p>y = 6 + 1 = <b>7</b></p>
+
+        <p>Masukkan nilai x ke dalam rumus, lalu hitung
+        hasilnya sesuai urutan operasi.</p>
+    `,
+    questions: [
+        {
+            q: "Jika y = 2x + 1 dan x = 4, berapakah y?",
+            options: ["7", "8", "9", "10"],
+            answer: 2,
+            explanation: "y = 2(4) + 1 = 8 + 1 = 9."
+        },
+        {
+            q: "Jika y = 3x dan x = 5, berapakah y?",
+            options: ["8", "10", "15", "20"],
+            answer: 2,
+            explanation: "y = 3 × 5 = 15."
+        }
+    ]
+}
+];
+
+const STORAGE_KEY = "izumiHubV11";
+
+let state = {
+    xp: 0,
+    completed: [],
+    quizBest: {}
+};
 
 try {
-  state = Object.assign(
-    {},
-    defaultState,
-    JSON.parse(localStorage.getItem("izumiLearningState") || "{}")
-  );
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+        const parsed = JSON.parse(saved);
+        state.xp = Number(parsed.xp) || 0;
+        state.completed = Array.isArray(parsed.completed)
+            ? parsed.completed : [];
+        state.quizBest = parsed.quizBest || {};
+    }
 } catch (e) {
-  state = Object.assign({}, defaultState);
+    console.log("Data progres belum bisa dibaca.");
 }
+
+let currentLesson = null;
+let questionIndex = 0;
+let score = 0;
+let answered = false;
 
 function saveState() {
-  localStorage.setItem("izumiLearningState", JSON.stringify(state));
-  updateDashboard();
-}
-
-function updateDashboard() {
-  document.getElementById("xp").textContent = state.xp;
-  document.getElementById("level").textContent =
-    Math.floor(state.xp / 100) + 1;
-  document.getElementById("completed").textContent =
-    state.completed.length;
-}
-
-const academies = {
-  mext: {
-    title: "🇯🇵 MEXT Academy",
-    description: "Persiapan MEXT KOSEN dimulai dari fondasi akademik.",
-    lessons: [
-      {
-        id: "mext-math-01",
-        title: "Matematika: Persamaan Linear",
-        text: "Tujuan: memahami persamaan linear satu variabel. Contoh: x + 5 = 12. Kurangi kedua ruas dengan 5 sehingga x = 7."
-      },
-      {
-        id: "mext-english-01",
-        title: "English: Basic Sentence",
-        text: "Pola dasar: Subject + Verb + Object. Contoh: I study mathematics. Artinya: Saya belajar matematika."
-      },
-      {
-        id: "mext-physics-01",
-        title: "Fisika: Jarak dan Waktu",
-        text: "Kelajuan rata-rata = jarak ÷ waktu. Jika sebuah benda menempuh 100 meter dalam 20 detik, kelajuannya 5 meter per detik."
-      }
-    ]
-  },
-
-  vocaloid: {
-    title: "🎹 Vocaloid Academy",
-    description: "Belajar produksi musik dari dasar hingga mixing.",
-    lessons: [
-      {
-        id: "teto-01",
-        title: "Dasar Tuning Kasane Teto",
-        text: "Tuning bukan hanya mengubah pitch. Perhatikan timing nada, pitch curve, vibrato, velocity, dan karakter voicebank. Ubah satu parameter setiap percobaan agar hasilnya mudah dibandingkan."
-      },
-      {
-        id: "music-01",
-        title: "Dasar Chord",
-        text: "Chord C mayor terdiri dari C, E, G. Coba mainkan chord ini bersama melodi sederhana dan dengarkan hubungan antar nada."
-      },
-      {
-        id: "flm-01",
-        title: "Dasar Arrangement",
-        text: "Mulai dengan melodi utama, chord, bass, dan drum. Tambahkan instrumen secara bertahap supaya proyek FL Studio Mobile tetap ringan."
-      }
-    ]
-  },
-
-  coding: {
-    title: "💻 Coding Academy",
-    description: "Pahami struktur website melalui latihan sederhana.",
-    lessons: [
-      {
-        id: "html-01",
-        title: "HTML: Heading",
-        text: "Tag <h1> digunakan untuk heading utama. Contoh: <h1>Halo Dunia</h1>. HTML menentukan struktur konten halaman."
-      },
-      {
-        id: "html-02",
-        title: "HTML: Button",
-        text: "Tag <button> membuat tombol. Tombol baru melakukan tindakan jika diberi perilaku, misalnya melalui JavaScript."
-      },
-      {
-        id: "js-01",
-        title: "JavaScript: Variabel",
-        text: "Contoh: let nama = 'Izumi'; Variabel menyimpan nilai yang bisa digunakan dalam program."
-      }
-    ]
-  },
-
-  japanese: {
-    title: "📚 Japanese Academy",
-    description: "Latihan bahasa Jepang secara bertahap.",
-    lessons: [
-      {
-        id: "jp-01",
-        title: "Kosakata: 勉強",
-        text: "勉強（べんきょう）berarti belajar. Contoh: 日本語を勉強します。Artinya: Saya belajar bahasa Jepang."
-      },
-      {
-        id: "jp-02",
-        title: "Grammar: ～です",
-        text: "です digunakan untuk membuat pernyataan sopan. Contoh: 学生です。Artinya: Saya seorang pelajar, bergantung pada konteks."
-      },
-      {
-        id: "jp-03",
-        title: "Kosakata: 将来",
-        text: "将来（しょうらい）berarti masa depan. Contoh: 将来、日本で勉強したいです。Artinya: Saya ingin belajar di Jepang pada masa depan."
-      }
-    ]
-  }
-};
-
-function openAcademy(id) {
-  const academy = academies[id];
-  if (!academy) return;
-
-  document.getElementById("panelTitle").textContent = academy.title;
-  document.getElementById("panelDescription").textContent =
-    academy.description;
-
-  const list = document.getElementById("lessonList");
-  list.innerHTML = "";
-
-  academy.lessons.forEach(function(lesson) {
-    const item = document.createElement("div");
-    item.className = "lesson";
-
-    const title = document.createElement("h3");
-    title.textContent = lesson.title;
-
-    const text = document.createElement("p");
-    text.textContent = lesson.text;
-
-    const done = state.completed.includes(lesson.id);
-    const button = document.createElement("button");
-
-    button.textContent = done ? "✓ Selesai" : "Tandai Selesai";
-    button.disabled = done;
-
-    button.onclick = function() {
-      if (!state.completed.includes(lesson.id)) {
-        state.completed.push(lesson.id);
-        state.xp += 10;
-
-        if (state.xp >= 100 &&
-            !state.achievements.includes("xp-100")) {
-          state.achievements.push("xp-100");
-        }
-
-        saveState();
-        openAcademy(id);
-      }
-    };
-
-    const bookmark = document.createElement("button");
-    bookmark.className = "secondary";
-    bookmark.style.marginLeft = "6px";
-    bookmark.textContent = state.bookmarks.includes(lesson.id)
-      ? "★ Disimpan"
-      : "☆ Bookmark";
-
-    bookmark.onclick = function() {
-      if (state.bookmarks.includes(lesson.id)) {
-        state.bookmarks = state.bookmarks.filter(
-          x => x !== lesson.id
-        );
-      } else {
-        state.bookmarks.push(lesson.id);
-      }
-
-      saveState();
-      openAcademy(id);
-    };
-
-    item.appendChild(title);
-    item.appendChild(text);
-    item.appendChild(button);
-    item.appendChild(bookmark);
-    list.appendChild(item);
-  });
-
-  document.getElementById("academyPanel").classList.add("active");
-  document.getElementById("toolsPanel").classList.remove("active");
-
-  document.getElementById("academyPanel").scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-}
-
-function closeAcademy() {
-  document.getElementById("academyPanel").classList.remove("active");
-}
-
-function showTools(tool) {
-  const panel = document.getElementById("toolsPanel");
-  const title = document.getElementById("toolsTitle");
-  const content = document.getElementById("toolsContent");
-
-  document.getElementById("academyPanel").classList.remove("active");
-  panel.classList.add("active");
-  content.innerHTML = "";
-
-  if (tool === "modules") {
-    title.textContent = "📦 Module Manager";
-
-    const description = document.createElement("p");
-    description.textContent =
-      "Modul tambahan akan menggunakan paket ZIP berisi manifest.json dan materi JSON. Fitur impor dan penghapusan modul akan diaktifkan setelah lapisan penyimpanan Android dibuat.";
-
-    content.appendChild(description);
-
-    const listTitle = document.createElement("h4");
-    listTitle.textContent = "Modul terpasang";
-    content.appendChild(listTitle);
-
-    if (state.modules.length === 0) {
-      const empty = document.createElement("p");
-      empty.textContent = "Belum ada modul tambahan yang diimpor.";
-      content.appendChild(empty);
-    } else {
-      state.modules.forEach(function(module) {
-        const row = document.createElement("p");
-        row.textContent = module.name + " · " + module.version;
-        content.appendChild(row);
-      });
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (e) {
+        alert("Progres tidak dapat disimpan oleh penyimpanan lokal.");
     }
-  }
+    updateStats();
+}
 
-  if (tool === "achievements") {
-    title.textContent = "🏆 Achievements";
+function updateStats() {
+    document.getElementById("xp").textContent = state.xp;
+    document.getElementById("level").textContent =
+        Math.floor(state.xp / 100) + 1;
+    document.getElementById("done").textContent =
+        state.completed.length;
 
-    const items = [
-      {
-        id: "first-lesson",
-        name: "Langkah Pertama",
-        condition: state.completed.length >= 1
-      },
-      {
-        id: "xp-100",
-        name: "100 XP",
-        condition: state.xp >= 100
-      },
-      {
-        id: "five-lessons",
-        name: "Konsisten Belajar",
-        condition: state.completed.length >= 5
-      }
-    ];
+    const total = lessons.length;
+    const completed = lessons.filter(
+        l => state.completed.includes(l.id)
+    ).length;
 
-    items.forEach(function(item) {
-      const row = document.createElement("p");
-      row.textContent =
-        (item.condition ? "🏅 " : "🔒 ") + item.name;
-      content.appendChild(row);
+    document.getElementById("progressBar").style.width =
+        (completed / total * 100) + "%";
 
-      if (item.condition &&
-          !state.achievements.includes(item.id)) {
-        state.achievements.push(item.id);
-      }
+    document.getElementById("progressText").textContent =
+        completed + " dari " + total + " pelajaran selesai";
+}
+
+function showSection(section) {
+    ["mext", "lessonView", "quizView"].forEach(id => {
+        document.getElementById(id).hidden = true;
     });
 
-    saveState();
-  }
-
-  if (tool === "notes") {
-    title.textContent = "📝 Catatan Belajar";
-
-    const area = document.createElement("textarea");
-    area.value = state.notes;
-    area.placeholder = "Tulis catatan belajarmu di sini...";
-    area.style.width = "100%";
-    area.style.minHeight = "150px";
-    area.style.padding = "12px";
-    area.style.borderRadius = "10px";
-    area.style.background = "#101426";
-    area.style.color = "#f4f5ff";
-
-    const button = document.createElement("button");
-    button.textContent = "Simpan Catatan";
-    button.style.marginTop = "10px";
-
-    button.onclick = function() {
-      state.notes = area.value;
-      saveState();
-      alert("Catatan berhasil disimpan di perangkat ini.");
-    };
-
-    content.appendChild(area);
-    content.appendChild(button);
-  }
-
-  if (tool === "bookmarks") {
-    title.textContent = "🔖 Bookmark";
-
-    if (state.bookmarks.length === 0) {
-      content.textContent =
-        "Belum ada materi yang disimpan. Buka akademi dan tekan Bookmark.";
-    } else {
-      state.bookmarks.forEach(function(id) {
-        let found = null;
-
-        Object.values(academies).forEach(function(academy) {
-          academy.lessons.forEach(function(lesson) {
-            if (lesson.id === id) found = lesson;
-          });
-        });
-
-        if (found) {
-          const row = document.createElement("p");
-          row.textContent = "★ " + found.title;
-          content.appendChild(row);
-        }
-      });
+    if (section !== "home") {
+        document.getElementById(section).hidden = false;
     }
-  }
 
-  panel.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
+    if (section === "mext") {
+        renderLessons();
+    }
+
+    window.scrollTo(0, 0);
 }
 
-updateDashboard();
-</script></body>
+function renderLessons() {
+    const list = document.getElementById("lessonList");
+    list.innerHTML = "";
+
+    lessons.forEach((lesson, index) => {
+        const completed = state.completed.includes(lesson.id);
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const title = document.createElement("h3");
+        title.textContent = (completed ? "✅ " : "📘 ") +
+            (index + 1) + ". " + lesson.title;
+
+        const desc = document.createElement("p");
+        desc.className = "muted";
+        desc.textContent = lesson.description;
+
+        const button = document.createElement("button");
+        button.textContent = "Buka materi";
+        button.onclick = () => openLesson(lesson.id);
+
+        card.append(title, desc, button);
+        list.appendChild(card);
+    });
+}
+
+function openLesson(id) {
+    currentLesson = lessons.find(l => l.id === id);
+    if (!currentLesson) return;
+
+    document.getElementById("lessonNumber").textContent =
+        "MATERI " + (lessons.indexOf(currentLesson) + 1);
+
+    document.getElementById("lessonHeading").textContent =
+        currentLesson.title;
+
+    document.getElementById("lessonContent").innerHTML =
+        currentLesson.content;
+
+    showSection("lessonView");
+}
+
+function startQuiz() {
+    questionIndex = 0;
+    score = 0;
+    answered = false;
+    showSection("quizView");
+    renderQuestion();
+}
+
+function renderQuestion() {
+    const questions = currentLesson.questions;
+
+    if (questionIndex >= questions.length) {
+        finishQuiz();
+        return;
+    }
+
+    answered = false;
+
+    const q = questions[questionIndex];
+
+    document.getElementById("quizCounter").textContent =
+        "Soal " + (questionIndex + 1) + " dari " + questions.length;
+
+    document.getElementById("questionText").textContent = q.q;
+
+    const options = document.getElementById("options");
+    options.innerHTML = "";
+
+    document.getElementById("feedback").hidden = true;
+    document.getElementById("nextButton").hidden = true;
+
+    q.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.className = "option";
+        button.textContent =
+            String.fromCharCode(65 + index) + ". " + option;
+
+        button.onclick = () => checkAnswer(index);
+        options.appendChild(button);
+    });
+}
+
+function checkAnswer(selected) {
+    if (answered) return;
+    answered = true;
+
+    const q = currentLesson.questions[questionIndex];
+    const buttons = document.querySelectorAll("#options button");
+    const feedback = document.getElementById("feedback");
+
+    buttons.forEach(button => button.disabled = true);
+
+    if (selected === q.answer) {
+        score++;
+        feedback.textContent = "✅ Benar! " + q.explanation;
+    } else {
+        feedback.textContent = "❌ Belum tepat. Jawaban yang benar: " +
+            q.options[q.answer] + ". " + q.explanation;
+    }
+
+    feedback.hidden = false;
+    document.getElementById("nextButton").hidden = false;
+}
+
+function nextQuestion() {
+    questionIndex++;
+    renderQuestion();
+}
+
+function finishQuiz() {
+    const total = currentLesson.questions.length;
+    const previousBest = Number(state.quizBest[currentLesson.id]) || 0;
+
+    const feedback = document.getElementById("feedback");
+    document.getElementById("quizCounter").textContent = "Latihan selesai!";
+    document.getElementById("questionText").textContent =
+        "Skor kamu: " + score + " dari " + total;
+
+    document.getElementById("options").innerHTML = "";
+    document.getElementById("nextButton").hidden = true;
+
+    const earned = score * 5;
+    state.xp += earned;
+
+    if (score > previousBest) {
+        state.quizBest[currentLesson.id] = score;
+    }
+
+    if (!state.completed.includes(currentLesson.id)) {
+        state.completed.push(currentLesson.id);
+        state.xp += 10;
+    }
+
+    saveState();
+
+    feedback.textContent =
+        "Kamu mendapatkan " + earned + " XP dari jawaban benar. " +
+        "Pelajaran selesai mendapat tambahan 10 XP. " +
+        "Baca kembali pembahasan jika masih ada yang belum dipahami.";
+
+    feedback.hidden = false;
+
+    const back = document.createElement("button");
+    back.textContent = "Kembali ke daftar materi";
+    back.onclick = () => showSection("mext");
+
+    document.getElementById("options").appendChild(back);
+}
+
+updateStats();
+</script>
+
+</body>
 </html>
