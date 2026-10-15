@@ -208,7 +208,9 @@ footer {
     <h3>🇯🇵 MEXT Academy</h3>
     <p>Persiapan belajar untuk target beasiswa MEXT KOSEN.</p>
     <p class="muted">Matematika • Fisika • Inggris • Strategi belajar</p>
-    <button onclick="showSection('mext')">Buka MEXT Academy</button>
+   <button type="button" id="openMextButton">
+    Buka MEXT Academy
+   </button>
 </div>
 
 <div class="card">
@@ -633,7 +635,13 @@ function finishQuiz() {
     document.getElementById("options").appendChild(back);
 }
 
-updateStats();
+    document.getElementById("openMextButton").addEventListener(
+    "click",
+    function() {
+        showSection("mext");
+    }
+);
+ updatestats();
 </script>
 
 </body>
