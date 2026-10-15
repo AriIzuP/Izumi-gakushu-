@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IZUMI LEARNING HUB</title>
-
-<style>
-* {
-    box-sizing: border-box;
-}
+<title>IZUMI LEARNING HUB</title><style>
+* { box-sizing: border-box; }
 
 :root {
     --bg: #10121a;
@@ -33,15 +28,8 @@ header {
     border-bottom: 1px solid #383452;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 23px;
-}
-
-header p {
-    margin-bottom: 0;
-    color: var(--muted);
-}
+header h1 { margin: 0; font-size: 23px; }
+header p { margin-bottom: 0; color: var(--muted); }
 
 main {
     padding: 16px;
@@ -69,15 +57,8 @@ main {
     font-size: 20px;
 }
 
-.stat span {
-    font-size: 12px;
-    color: var(--muted);
-}
-
-h2 {
-    font-size: 20px;
-    margin-top: 26px;
-}
+.stat span { font-size: 12px; color: var(--muted); }
+h2 { font-size: 20px; margin-top: 26px; }
 
 .card {
     background: var(--card);
@@ -87,14 +68,8 @@ h2 {
     margin: 12px 0;
 }
 
-.card h3 {
-    margin-top: 0;
-}
-
-.muted {
-    color: var(--muted);
-    font-size: 14px;
-}
+.card h3 { margin-top: 0; }
+.muted { color: var(--muted); font-size: 14px; }
 
 button {
     border: 0;
@@ -113,9 +88,7 @@ button:disabled {
     color: white;
 }
 
-button.secondary {
-    background: #34394c;
-}
+button.secondary { background: #34394c; }
 
 button.option {
     display: block;
@@ -126,13 +99,8 @@ button.option {
     margin: 9px 0;
 }
 
-button.option:active {
-    background: #4b426f;
-}
-
-.lesson-title {
-    color: var(--green);
-}
+button.option:active { background: #4b426f; }
+.lesson-title { color: var(--green); }
 
 .progress-bg {
     background: #303548;
@@ -148,10 +116,7 @@ button.option:active {
     width: 0;
 }
 
-.question {
-    font-size: 17px;
-    font-weight: bold;
-}
+.question { font-size: 17px; font-weight: bold; }
 
 .feedback {
     padding: 12px;
@@ -166,20 +131,13 @@ footer {
     color: var(--muted);
     font-size: 12px;
 }
-</style>
-</head>
 
-<body>
-
-<header>
+[hidden] { display: none !important; }
+</style></head><body><header>
     <h1>IZUMI LEARNING HUB</h1>
     <p>Learn today, build your future. 🇯🇵</p>
     <p>Belajar sedikit demi sedikit, setiap hari.</p>
-</header>
-
-<main>
-
-<section class="stats">
+</header><main><section class="stats">
     <div class="stat">
         <strong id="xp">0</strong>
         <span>Total XP</span>
@@ -192,25 +150,20 @@ footer {
         <strong id="done">0</strong>
         <span>Pelajaran selesai</span>
     </div>
-</section>
-
-<section class="card">
+</section><section class="card">
     <h3>📈 Progres MEXT Academy</h3>
     <div class="progress-bg">
         <div class="progress-bar" id="progressBar"></div>
     </div>
     <p class="muted" id="progressText">0 dari 4 pelajaran selesai</p>
-</section>
-
-<h2>🎓 Akademi Belajar</h2>
-
-<div class="card">
+</section><section id="home">
+    <h2>🎓 Akademi Belajar</h2><div class="card">
     <h3>🇯🇵 MEXT Academy</h3>
     <p>Persiapan belajar untuk target beasiswa MEXT KOSEN.</p>
     <p class="muted">Matematika • Fisika • Inggris • Strategi belajar</p>
-   <button type="button" id="openMextButton">
-    Buka MEXT Academy
-   </button>
+    <button type="button" onclick="showSection('mext')">
+        Buka MEXT Academy
+    </button>
 </div>
 
 <div class="card">
@@ -231,34 +184,27 @@ footer {
     <p class="muted">Modul pembelajaran sedang dikembangkan.</p>
 </div>
 
-<section id="mext" hidden>
+</section><section id="mext" hidden>
     <h2>📚 MEXT Academy: Matematika</h2>
     <p class="muted">
         Materi pengantar dan latihan dasar untuk membangun fondasi
-        Matematika. Ini belum merupakan simulasi resmi ujian MEXT.
+        Matematika. Ini bukan simulasi resmi ujian MEXT.
     </p>
-
     <div id="lessonList"></div>
-
     <button class="secondary" onclick="showSection('home')">
         ← Kembali ke beranda
     </button>
-</section>
-
-<section id="lessonView" hidden>
+</section><section id="lessonView" hidden>
     <div class="card">
         <p class="lesson-title" id="lessonNumber"></p>
         <h2 id="lessonHeading"></h2>
         <div id="lessonContent"></div>
-
         <button onclick="startQuiz()">Mulai latihan soal</button>
         <button class="secondary" onclick="showSection('mext')">
             Kembali ke daftar materi
         </button>
     </div>
-</section>
-
-<section id="quizView" hidden>
+</section><section id="quizView" hidden>
     <div class="card">
         <h2>✏️ Latihan Matematika</h2>
         <p class="muted" id="quizCounter"></p>
@@ -272,15 +218,9 @@ footer {
             Keluar dari latihan
         </button>
     </div>
-</section>
+</section></main><footer>IZUMI LEARNING HUB • Offline Learning Project</footer><script>
+"use strict";
 
-</main>
-
-<footer>
-    IZUMI LEARNING HUB • Offline Learning Project
-</footer>
-
-<script>
 const lessons = [
 {
     id: "math1",
@@ -288,18 +228,14 @@ const lessons = [
     description: "Memahami cara mencari nilai variabel.",
     content: `
         <h3>1. Apa itu persamaan linear?</h3>
-        <p>Persamaan linear adalah persamaan dengan variabel
-        berpangkat satu.</p>
+        <p>Persamaan linear adalah persamaan dengan variabel berpangkat satu.</p>
         <p>Contoh: <b>2x + 3 = 11</b></p>
-
         <h3>2. Cara menyelesaikan</h3>
         <p>Kurangi kedua sisi dengan 3:</p>
         <p>2x = 11 - 3 = 8</p>
         <p>Bagi kedua sisi dengan 2:</p>
         <p><b>x = 4</b></p>
-
-        <p>Ingat: operasi yang dilakukan pada satu sisi
-        harus menjaga keseimbangan persamaan.</p>
+        <p>Operasi pada kedua sisi harus menjaga keseimbangan persamaan.</p>
     `,
     questions: [
         {
@@ -323,15 +259,11 @@ const lessons = [
     content: `
         <h3>1. Pecahan</h3>
         <p>Pecahan terdiri dari pembilang dan penyebut.</p>
-        <p>Contoh: 1/2 berarti satu bagian dari dua bagian
-        yang sama besar.</p>
-
+        <p>Contoh: 1/2 berarti satu bagian dari dua bagian yang sama besar.</p>
         <h3>2. Penjumlahan pecahan</h3>
         <p>Jika penyebut sama, jumlahkan pembilangnya.</p>
         <p>Contoh: 1/5 + 2/5 = 3/5.</p>
-
-        <p>Jika penyebut berbeda, samakan penyebut
-        terlebih dahulu.</p>
+        <p>Jika penyebut berbeda, samakan penyebut terlebih dahulu.</p>
         <p>Contoh: 1/2 + 1/4 = 2/4 + 1/4 = 3/4.</p>
     `,
     questions: [
@@ -357,11 +289,8 @@ const lessons = [
         <h3>1. Pangkat</h3>
         <p>Pangkat menunjukkan perkalian berulang.</p>
         <p>Contoh: 2³ = 2 × 2 × 2 = 8.</p>
-
         <h3>2. Akar kuadrat</h3>
-        <p>Akar kuadrat mencari bilangan yang jika
-        dikalikan dengan dirinya menghasilkan bilangan
-        di dalam akar.</p>
+        <p>Akar kuadrat mencari bilangan yang jika dikalikan dengan dirinya menghasilkan bilangan di dalam akar.</p>
         <p>Contoh: √25 = 5 karena 5 × 5 = 25.</p>
     `,
     questions: [
@@ -385,18 +314,13 @@ const lessons = [
     description: "Memahami hubungan x dan y dalam fungsi sederhana.",
     content: `
         <h3>1. Apa itu fungsi?</h3>
-        <p>Fungsi menghubungkan suatu nilai masukan
-        dengan nilai keluaran.</p>
-
+        <p>Fungsi menghubungkan suatu nilai masukan dengan nilai keluaran.</p>
         <p>Contoh: y = 2x + 1.</p>
-
         <h3>2. Menghitung nilai fungsi</h3>
         <p>Jika x = 3, maka:</p>
         <p>y = 2(3) + 1</p>
         <p>y = 6 + 1 = <b>7</b></p>
-
-        <p>Masukkan nilai x ke dalam rumus, lalu hitung
-        hasilnya sesuai urutan operasi.</p>
+        <p>Masukkan nilai x ke rumus, lalu hitung hasilnya.</p>
     `,
     questions: [
         {
@@ -432,8 +356,8 @@ try {
             ? parsed.completed : [];
         state.quizBest = parsed.quizBest || {};
     }
-} catch (e) {
-    console.log("Data progres belum bisa dibaca.");
+} catch (error) {
+    console.log("Data progres belum bisa dibaca.", error);
 }
 
 let currentLesson = null;
@@ -444,8 +368,8 @@ let answered = false;
 function saveState() {
     try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    } catch (e) {
-        alert("Progres tidak dapat disimpan oleh penyimpanan lokal.");
+    } catch (error) {
+        console.log("Progres tidak dapat disimpan.", error);
     }
     updateStats();
 }
@@ -459,7 +383,7 @@ function updateStats() {
 
     const total = lessons.length;
     const completed = lessons.filter(
-        l => state.completed.includes(l.id)
+        lesson => state.completed.includes(lesson.id)
     ).length;
 
     document.getElementById("progressBar").style.width =
@@ -470,25 +394,27 @@ function updateStats() {
 }
 
 function showSection(section) {
-    ["mext", "lessonView", "quizView"].forEach(id => {
-        document.getElementById(id).hidden = true;
-    });
+    const sectionIds = ["home", "mext", "lessonView", "quizView"];
 
-    if (section !== "home") {
-        document.getElementById(section).hidden = false;
-    }
+    sectionIds.forEach(function(id) {
+        document.getElementById(id).hidden = (id !== section);
+    });
 
     if (section === "mext") {
         renderLessons();
     }
-}
 
+    const target = document.getElementById(section);
+    if (target) {
+        target.scrollIntoView({ behavior: "auto", block: "start" });
+    }
+}
 
 function renderLessons() {
     const list = document.getElementById("lessonList");
     list.innerHTML = "";
 
-    lessons.forEach((lesson, index) => {
+    lessons.forEach(function(lesson, index) {
         const completed = state.completed.includes(lesson.id);
         const card = document.createElement("div");
         card.className = "card";
@@ -502,16 +428,24 @@ function renderLessons() {
         desc.textContent = lesson.description;
 
         const button = document.createElement("button");
+        button.type = "button";
         button.textContent = "Buka materi";
-        button.onclick = () => openLesson(lesson.id);
+        button.addEventListener("click", function() {
+            openLesson(lesson.id);
+        });
 
-        card.append(title, desc, button);
+        card.appendChild(title);
+        card.appendChild(desc);
+        card.appendChild(button);
         list.appendChild(card);
     });
 }
 
 function openLesson(id) {
-    currentLesson = lessons.find(l => l.id === id);
+    currentLesson = lessons.find(function(lesson) {
+        return lesson.id === id;
+    });
+
     if (!currentLesson) return;
 
     document.getElementById("lessonNumber").textContent =
@@ -527,6 +461,8 @@ function openLesson(id) {
 }
 
 function startQuiz() {
+    if (!currentLesson) return;
+
     questionIndex = 0;
     score = 0;
     answered = false;
@@ -543,13 +479,12 @@ function renderQuestion() {
     }
 
     answered = false;
-
-    const q = questions[questionIndex];
+    const question = questions[questionIndex];
 
     document.getElementById("quizCounter").textContent =
         "Soal " + (questionIndex + 1) + " dari " + questions.length;
 
-    document.getElementById("questionText").textContent = q.q;
+    document.getElementById("questionText").textContent = question.q;
 
     const options = document.getElementById("options");
     options.innerHTML = "";
@@ -557,13 +492,17 @@ function renderQuestion() {
     document.getElementById("feedback").hidden = true;
     document.getElementById("nextButton").hidden = true;
 
-    q.options.forEach((option, index) => {
+    question.options.forEach(function(option, index) {
         const button = document.createElement("button");
+        button.type = "button";
         button.className = "option";
         button.textContent =
             String.fromCharCode(65 + index) + ". " + option;
 
-        button.onclick = () => checkAnswer(index);
+        button.addEventListener("click", function() {
+            checkAnswer(index);
+        });
+
         options.appendChild(button);
     });
 }
@@ -572,18 +511,22 @@ function checkAnswer(selected) {
     if (answered) return;
     answered = true;
 
-    const q = currentLesson.questions[questionIndex];
+    const question = currentLesson.questions[questionIndex];
     const buttons = document.querySelectorAll("#options button");
     const feedback = document.getElementById("feedback");
 
-    buttons.forEach(button => button.disabled = true);
+    buttons.forEach(function(button) {
+        button.disabled = true;
+    });
 
-    if (selected === q.answer) {
+    if (selected === question.answer) {
         score++;
-        feedback.textContent = "✅ Benar! " + q.explanation;
+        feedback.textContent = "✅ Benar! " + question.explanation;
     } else {
-        feedback.textContent = "❌ Belum tepat. Jawaban yang benar: " +
-            q.options[q.answer] + ". " + q.explanation;
+        feedback.textContent =
+            "❌ Belum tepat. Jawaban yang benar: " +
+            question.options[question.answer] + ". " +
+            question.explanation;
     }
 
     feedback.hidden = false;
@@ -597,9 +540,8 @@ function nextQuestion() {
 
 function finishQuiz() {
     const total = currentLesson.questions.length;
-    const previousBest = Number(state.quizBest[currentLesson.id]) || 0;
-
     const feedback = document.getElementById("feedback");
+
     document.getElementById("quizCounter").textContent = "Latihan selesai!";
     document.getElementById("questionText").textContent =
         "Skor kamu: " + score + " dari " + total;
@@ -609,6 +551,9 @@ function finishQuiz() {
 
     const earned = score * 5;
     state.xp += earned;
+
+    const previousBest =
+        Number(state.quizBest[currentLesson.id]) || 0;
 
     if (score > previousBest) {
         state.quizBest[currentLesson.id] = score;
@@ -622,27 +567,24 @@ function finishQuiz() {
     saveState();
 
     feedback.textContent =
-        "Kamu mendapatkan " + earned + " XP dari jawaban benar. " +
-        "Pelajaran selesai mendapat tambahan 10 XP. " +
+        "Kamu mendapatkan " + earned +
+        " XP dari jawaban benar. Pelajaran selesai mendapat tambahan 10 XP. " +
         "Baca kembali pembahasan jika masih ada yang belum dipahami.";
 
     feedback.hidden = false;
 
     const back = document.createElement("button");
+    back.type = "button";
     back.textContent = "Kembali ke daftar materi";
-    back.onclick = () => showSection("mext");
+    back.addEventListener("click", function() {
+        showSection("mext");
+    });
 
     document.getElementById("options").appendChild(back);
 }
 
-    document.getElementById("openMextButton").addEventListener(
-    "click",
-    function() {
-        showSection("mext");
-    }
-);
- updatestats();
-</script>
-
-</body>
+/* Inisialisasi halaman */
+updateStats();
+showSection("home");
+</script></body>
 </html>
